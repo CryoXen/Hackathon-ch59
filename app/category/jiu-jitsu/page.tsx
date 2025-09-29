@@ -4,21 +4,21 @@ import { ArrowLeft, Star, ShoppingCart, Waves } from "lucide-react"
 const products = [
   {
     name: "Gi Brasileño Azul A3",
-    price: "$129.99",
+    price: "$2000.00",
     rating: 5,
     image: "/blue-bjj-gi.jpg",
     category: "Uniformes",
   },
   {
     name: "Cinturón de Grado",
-    price: "$24.99",
+    price: "$299.99",
     rating: 5,
     image: "/bjj-belt.jpg",
     category: "Accesorios",
   },
   {
     name: "Rashguard de Compresión",
-    price: "$49.99",
+    price: "$399.99",
     rating: 5,
     image: "/bjj-rashguard.jpg",
     category: "Uniformes",
@@ -32,14 +32,14 @@ const products = [
   },
   {
     name: "Protector de Orejas",
-    price: "$29.99",
+    price: "$679.99",
     rating: 4,
     image: "/ear-guards.jpg",
     category: "Protección",
   },
   {
     name: "Dummy de Entrenamiento",
-    price: "$189.99",
+    price: "$1904.99",
     rating: 5,
     image: "/grappling-dummy.jpg",
     category: "Equipamiento",
