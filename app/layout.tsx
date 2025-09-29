@@ -18,7 +18,7 @@ const bebasNeue = Bebas_Neue({
 })
 
 export const metadata: Metadata = {
-  title: "Warrior Gear - Equipo de Artes Marciales",
+  title: "KNOCK OUT - Equipo de Artes Marciales",
   description: "Encuentra el mejor equipo para tu disciplina de artes marciales",
     generator: 'v0.app'
 }
