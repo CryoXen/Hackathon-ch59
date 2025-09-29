@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Inter, Bebas_Neue } from "next/font/google"
 import "./globals.css"
 import { Header } from "@/components/header"
+import { CartProvider } from "@/components/useCart" // <-- Importa tu provider aquí
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,7 +21,7 @@ const bebasNeue = Bebas_Neue({
 export const metadata: Metadata = {
   title: "Warrior Gear - Equipo de Artes Marciales",
   description: "Encuentra el mejor equipo para tu disciplina de artes marciales",
-    generator: 'v0.app'
+  generator: 'v0.app'
 }
 
 export default function RootLayout({
@@ -31,8 +32,10 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${inter.variable} ${bebasNeue.variable}`}>
       <body className="font-sans antialiased bg-zinc-950 text-white">
-        <Header />
-        {children}
+        <CartProvider> {/* <-- Envuelve todo con CartProvider */}
+          <Header />
+          {children}
+        </CartProvider>
       </body>
     </html>
   )

@@ -2,7 +2,8 @@
 
 import Link from "next/link"
 import { useState } from "react"
-import { Menu, X, ShoppingCart } from "lucide-react"
+import { Menu, X } from "lucide-react"
+import { CartDropdown } from "./cartDropdown" // 👈 importa tu componente
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -24,7 +25,9 @@ export function Header() {
             <div className="w-10 h-10 bg-gradient-to-br from-red-600 to-amber-500 rounded-lg flex items-center justify-center transform group-hover:scale-110 transition-transform">
               <span className="text-white font-black text-xl">WG</span>
             </div>
-            <span className="font-sans text-2xl font-black text-white hidden sm:block">WARRIOR GEAR</span>
+            <span className="font-sans text-2xl font-black text-white hidden sm:block">
+              WARRIOR GEAR
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -43,18 +46,19 @@ export function Header() {
 
           {/* Cart & Mobile Menu */}
           <div className="flex items-center gap-4">
-            <button className="p-2 hover:bg-zinc-800 rounded-lg transition-colors relative group">
-              <ShoppingCart className="w-6 h-6 text-zinc-300 group-hover:text-white transition-colors" />
-              <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-600 rounded-full text-xs flex items-center justify-center text-white font-bold">
-                0
-              </span>
-            </button>
+            {/* ✅ Aquí usamos el nuevo componente */}
+            <CartDropdown />
 
+            {/* Botón menú móvil */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="lg:hidden p-2 hover:bg-zinc-800 rounded-lg transition-colors"
             >
-              {isMenuOpen ? <X className="w-6 h-6 text-white" /> : <Menu className="w-6 h-6 text-white" />}
+              {isMenuOpen ? (
+                <X className="w-6 h-6 text-white" />
+              ) : (
+                <Menu className="w-6 h-6 text-white" />
+              )}
             </button>
           </div>
         </div>

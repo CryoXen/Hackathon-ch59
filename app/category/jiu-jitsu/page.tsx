@@ -1,12 +1,15 @@
+"use client"
+
 import Link from "next/link"
 import { ArrowLeft, Star, ShoppingCart, Waves } from "lucide-react"
+import { useCart } from "@/hooks/useCart"
 
 const products = [
   {
     name: "Gi Brasileño Azul A3",
     price: "$129.99",
     rating: 5,
-    image: "/blue-bjj-gi.jpg",
+    image: "/GiAzul.jpg",
     category: "Uniformes",
   },
   {
@@ -47,9 +50,11 @@ const products = [
 ]
 
 export default function JiuJitsuPage() {
+  const { addToCart } = useCart()
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-950 via-blue-900 to-zinc-950">
-      {/* Hero Section - Jiu-Jitsu Style: Fluid, Technical, Brazilian */}
+      {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-blue-950 via-blue-800 to-blue-950">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute inset-0 bg-[url('/brazilian-jiu-jitsu-grappling.jpg')] bg-cover bg-center" />
@@ -117,13 +122,11 @@ export default function JiuJitsuPage() {
               perfeccionamiento técnico.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              {[
-                { name: "Blanco", color: "bg-white" },
+              {[{ name: "Blanco", color: "bg-white" },
                 { name: "Azul", color: "bg-blue-500" },
                 { name: "Púrpura", color: "bg-purple-600" },
                 { name: "Marrón", color: "bg-amber-800" },
-                { name: "Negro", color: "bg-zinc-900" },
-              ].map((belt, index) => (
+                { name: "Negro", color: "bg-zinc-900" }].map((belt, index) => (
                 <div
                   key={index}
                   className="bg-blue-800/50 backdrop-blur-sm border-2 border-blue-500 rounded-xl p-6 hover:bg-blue-700/50 transition-all hover:scale-105 min-w-[140px]"
@@ -173,7 +176,14 @@ export default function JiuJitsuPage() {
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-3xl font-black text-blue-500">{product.price}</span>
-                    <button className="flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold transition-all">
+                    <button
+                      onClick={() => addToCart({
+                        id: `jiujitsu-${index}`,
+                        name: product.name,
+                        price: parseFloat(product.price.replace("$", ""))
+                      })}
+                      className="flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold transition-all"
+                    >
                       <ShoppingCart className="w-5 h-5" />
                       Agregar
                     </button>
