@@ -6,7 +6,7 @@ const products = [
     name: "Dobok Tradicional Blanco",
     price: "$79.99",
     rating: 5,
-    image: "/taekwondo-dobok.jpg",
+    image: "/dobok.jpg",
     category: "Uniformes",
   },
   {
@@ -34,14 +34,14 @@ const products = [
     name: "Botines de Taekwondo",
     price: "$29.99",
     rating: 4,
-    image: "/taekwondo-shoes.jpg",
+    image: "/botas.jpg",
     category: "Calzado",
   },
   {
     name: "Escudo de Pateo",
     price: "$69.99",
     rating: 5,
-    image: "/kicking-shield.jpg",
+    image: "/escudo.jpg",
     category: "Equipamiento",
   },
 ]
