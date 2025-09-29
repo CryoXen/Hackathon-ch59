@@ -1,5 +1,7 @@
+"use client"
 import Link from "next/link"
 import { ArrowLeft, Star, ShoppingCart, Flame } from "lucide-react"
+import { useCartStore } from "@/store/cart"
 
 const products = [
   {
@@ -47,6 +49,7 @@ const products = [
 ]
 
 export default function MuayThaiPage() {
+  const addToCart = useCartStore((state) => state.addToCart)
   return (
     <div className="min-h-screen bg-gradient-to-b from-amber-50 via-red-50 to-amber-50">
       {/* Hero Section - Muay Thai Style: Bold, Energetic, Traditional Thai */}
@@ -165,10 +168,13 @@ export default function MuayThaiPage() {
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-3xl font-black text-red-600">{product.price}</span>
-                    <button className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-red-600 to-amber-600 hover:from-red-700 hover:to-amber-700 text-white rounded-xl font-bold transition-all">
-                      <ShoppingCart className="w-5 h-5" />
-                      Agregar
-                    </button>
+                    <button
+              onClick={() => addToCart(product)}
+              className="mt-4 flex items-center gap-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-xl transition"
+            >
+              <ShoppingCart className="w-4 h-4" />
+              Agregar al carrito
+            </button>
                   </div>
                 </div>
               </div>
