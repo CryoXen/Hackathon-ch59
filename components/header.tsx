@@ -43,12 +43,14 @@ export function Header() {
 
           {/* Cart & Mobile Menu */}
           <div className="flex items-center gap-4">
-            <button className="p-2 hover:bg-zinc-800 rounded-lg transition-colors relative group">
+            <Link
+              href="/cart"
+              className="p-2 hover:bg-zinc-800 rounded-lg transition-colors relative group">
               <ShoppingCart className="w-6 h-6 text-zinc-300 group-hover:text-white transition-colors" />
               <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-600 rounded-full text-xs flex items-center justify-center text-white font-bold">
-                0
+              0
               </span>
-            </button>
+            </Link>
 
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
