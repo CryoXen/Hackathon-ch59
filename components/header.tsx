@@ -22,9 +22,9 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
             <div className="w-10 h-10 bg-gradient-to-br from-red-600 to-amber-500 rounded-lg flex items-center justify-center transform group-hover:scale-110 transition-transform">
-              <span className="text-white font-black text-xl">WG</span>
+              <span className="text-white font-black text-xl">KO</span>
             </div>
-            <span className="font-sans text-2xl font-black text-white hidden sm:block">WARRIOR GEAR</span>
+            <span className="font-sans text-2xl font-black text-white hidden sm:block">KNOCK OUT</span>
           </Link>
 
           {/* Desktop Navigation */}
