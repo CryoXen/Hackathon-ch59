@@ -1,45 +1,46 @@
 import Link from "next/link"
+import Image from "next/image"
 import { ArrowLeft, Star, ShoppingCart, Award } from "lucide-react"
 
 const products = [
   {
     name: "Guantes de Boxeo Pro 16oz",
-    price: "$129.99",
+    price: "$3000.99",
     rating: 5,
     image: "/boxing-gloves.jpg",
     category: "Guantes",
   },
   {
     name: "Casco de Entrenamiento",
-    price: "$95.99",
+    price: "$2899.99",
     rating: 5,
     image: "/boxing-headgear.jpg",
     category: "Protección",
   },
   {
     name: "Vendas de Mano Premium",
-    price: "$19.99",
+    price: "$349.00",
     rating: 5,
     image: "/hand-wraps.jpg",
     category: "Accesorios",
   },
   {
     name: "Saco de Boxeo 100lb",
-    price: "$199.99",
+    price: "$2468.99",
     rating: 5,
     image: "/heavy-bag.jpg",
     category: "Equipamiento",
   },
   {
     name: "Speed Ball Profesional",
-    price: "$79.99",
+    price: "$4250.99",
     rating: 4,
     image: "/speed-bag.jpg",
     category: "Equipamiento",
   },
   {
     name: "Protector Bucal Doble",
-    price: "$24.99",
+    price: "$90.99",
     rating: 4,
     image: "/mouthguard.jpg",
     category: "Protección",
