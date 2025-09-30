@@ -78,7 +78,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4 py-20 relative z-10">
           <div className="text-center mb-16 animate-fade-in">
             <h1 className="font-sans text-6xl md:text-8xl font-black mb-6 bg-gradient-to-r from-red-500 via-amber-500 to-blue-500 bg-clip-text text-transparent text-balance">
-              WARRIOR GEAR
+              KNOCK OUT
             </h1>
             <p className="text-xl md:text-2xl text-zinc-400 max-w-3xl mx-auto text-pretty leading-relaxed">
               Equípate como un verdadero guerrero. Encuentra el equipo perfecto para tu disciplina.

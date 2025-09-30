@@ -1,45 +1,49 @@
+"use client"
 import Link from "next/link"
+import Image from "next/image"
 import { ArrowLeft, Star, ShoppingCart, Award } from "lucide-react"
+import { useCartStore } from "@/store/cart"
+
 
 const products = [
   {
     name: "Guantes de Boxeo Pro 16oz",
-    price: "$129.99",
+    price: "$3000.99",
     rating: 5,
     image: "/boxing-gloves.jpg",
     category: "Guantes",
   },
   {
     name: "Casco de Entrenamiento",
-    price: "$95.99",
+    price: "$2899.99",
     rating: 5,
     image: "/boxing-headgear.jpg",
     category: "Protección",
   },
   {
     name: "Vendas de Mano Premium",
-    price: "$19.99",
+    price: "$349.00",
     rating: 5,
     image: "/hand-wraps.jpg",
     category: "Accesorios",
   },
   {
     name: "Saco de Boxeo 100lb",
-    price: "$199.99",
+    price: "$2468.99",
     rating: 5,
     image: "/heavy-bag.jpg",
     category: "Equipamiento",
   },
   {
     name: "Speed Ball Profesional",
-    price: "$79.99",
+    price: "$4250.99",
     rating: 4,
     image: "/speed-bag.jpg",
     category: "Equipamiento",
   },
   {
     name: "Protector Bucal Doble",
-    price: "$24.99",
+    price: "$90.99",
     rating: 4,
     image: "/mouthguard.jpg",
     category: "Protección",
@@ -47,6 +51,8 @@ const products = [
 ]
 
 export default function BoxingPage() {
+  const addToCart = useCartStore((state) => state.addToCart)
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-zinc-950 via-red-950 to-zinc-950">
       {/* Hero Section - Boxing Style: Classic, Bold, Powerful */}
@@ -167,10 +173,13 @@ export default function BoxingPage() {
                     <span className="text-3xl font-black bg-gradient-to-r from-red-600 to-yellow-600 bg-clip-text text-transparent">
                       {product.price}
                     </span>
-                    <button className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-red-600 to-yellow-600 hover:from-red-700 hover:to-yellow-700 text-white rounded-xl font-bold transition-all">
-                      <ShoppingCart className="w-5 h-5" />
-                      Agregar
-                    </button>
+                     <button
+              onClick={() => addToCart(product)}
+              className="mt-4 flex items-center gap-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-xl transition"
+            >
+              <ShoppingCart className="w-4 h-4" />
+              Agregar al carrito
+            </button>
                   </div>
                 </div>
               </div>

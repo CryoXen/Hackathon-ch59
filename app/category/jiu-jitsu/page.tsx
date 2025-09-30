@@ -1,52 +1,57 @@
+"use client"
 import Link from "next/link"
 import { ArrowLeft, Star, ShoppingCart, Waves } from "lucide-react"
+import { useCartStore } from "@/store/cart"
+
+
 
 const products = [
   {
     name: "Gi Brasileño Azul A3",
-    price: "$129.99",
+    price: "$700.00",
     rating: 5,
-    image: "/blue-bjj-gi.jpg",
+    image: "/Gi Brasileño Azul A3.jpg",
     category: "Uniformes",
   },
   {
     name: "Cinturón de Grado",
-    price: "$24.99",
+    price: "$700.00",
     rating: 5,
-    image: "/bjj-belt.jpg",
+    image: "/bjj-belt-system.jpg",
     category: "Accesorios",
   },
   {
     name: "Rashguard de Compresión",
-    price: "$49.99",
+    price: "$300.00",
     rating: 5,
-    image: "/bjj-rashguard.jpg",
+    image: "/Rashguard de Compresión.jpg",
     category: "Uniformes",
   },
   {
     name: "Shorts de Grappling",
-    price: "$39.99",
+    price: "$250.00",
     rating: 4,
-    image: "/grappling-shorts.jpg",
+    image: "/Shorts de Grappling.jpg",
     category: "Uniformes",
   },
   {
     name: "Protector de Orejas",
-    price: "$29.99",
+    price: "$159.00",
     rating: 4,
-    image: "/ear-guards.jpg",
+    image: "/Protector de Orejas.jpg",
     category: "Protección",
   },
   {
     name: "Dummy de Entrenamiento",
-    price: "$189.99",
+    price: "$1,199.99",
     rating: 5,
-    image: "/grappling-dummy.jpg",
+    image: "/Dummy de Entrenamiento.jpg",
     category: "Equipamiento",
   },
 ]
 
 export default function JiuJitsuPage() {
+  const addToCart = useCartStore((state) => state.addToCart)
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-950 via-blue-900 to-zinc-950">
       {/* Hero Section - Jiu-Jitsu Style: Fluid, Technical, Brazilian */}
@@ -173,10 +178,13 @@ export default function JiuJitsuPage() {
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-3xl font-black text-blue-500">{product.price}</span>
-                    <button className="flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold transition-all">
-                      <ShoppingCart className="w-5 h-5" />
-                      Agregar
-                    </button>
+                    <button
+              onClick={() => addToCart(product)}
+              className="mt-4 flex items-center gap-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-xl transition"
+            >
+              <ShoppingCart className="w-4 h-4" />
+              Agregar al carrito
+            </button>
                   </div>
                 </div>
               </div>

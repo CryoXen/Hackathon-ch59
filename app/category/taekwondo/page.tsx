@@ -1,52 +1,55 @@
+"use client"
 import Link from "next/link"
 import { ArrowLeft, Star, ShoppingCart, Zap } from "lucide-react"
+import { useCartStore } from "@/store/cart"
 
 const products = [
   {
     name: "Dobok Tradicional Blanco",
-    price: "$79.99",
+    price: "$1470.00",
     rating: 5,
-    image: "/taekwondo-dobok.jpg",
+    image: "/dobok.jpg",
     category: "Uniformes",
   },
   {
     name: "Peto Electrónico WTF",
-    price: "$299.99",
+    price: "$2250.99",
     rating: 5,
     image: "/taekwondo-chest-protector.jpg",
     category: "Protección",
   },
   {
     name: "Casco de Competición",
-    price: "$89.99",
+    price: "$799.99",
     rating: 5,
     image: "/taekwondo-helmet.jpg",
     category: "Protección",
   },
   {
     name: "Protector de Antebrazo",
-    price: "$35.99",
+    price: "$449.00",
     rating: 4,
     image: "/forearm-guard.jpg",
     category: "Protección",
   },
   {
     name: "Botines de Taekwondo",
-    price: "$29.99",
+    price: "$389.99",
     rating: 4,
-    image: "/taekwondo-shoes.jpg",
+    image: "/botas.jpg",
     category: "Calzado",
   },
   {
     name: "Escudo de Pateo",
-    price: "$69.99",
+    price: "$579.99",
     rating: 5,
-    image: "/kicking-shield.jpg",
+    image: "/escudo.jpg",
     category: "Equipamiento",
   },
 ]
 
 export default function TaekwondoPage() {
+  const addToCart = useCartStore((state) => state.addToCart)
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 via-red-50 to-yellow-50">
       {/* Hero Section - Taekwondo Style: Dynamic, Colorful, Korean */}
@@ -178,10 +181,13 @@ export default function TaekwondoPage() {
                     <span className="text-3xl font-black bg-gradient-to-r from-blue-600 to-red-600 bg-clip-text text-transparent">
                       {product.price}
                     </span>
-                    <button className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-red-600 hover:from-blue-700 hover:to-red-700 text-white rounded-xl font-bold transition-all">
-                      <ShoppingCart className="w-5 h-5" />
-                      Agregar
-                    </button>
+                    <button
+              onClick={() => addToCart(product)}
+              className="mt-4 flex items-center gap-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-xl transition"
+            >
+              <ShoppingCart className="w-4 h-4" />
+              Agregar al carrito
+            </button>
                   </div>
                 </div>
               </div>
