@@ -4,44 +4,61 @@ import { ArrowLeft, Star, ShoppingCart, Waves } from "lucide-react"
 const products = [
   {
     name: "Gi Brasileño Azul A3",
+<<<<<<< HEAD
     price: "$2000.00",
+=======
+    price: "$700",
+>>>>>>> 2b6c7bef358b2aa092a72e85c5cdd488d325195a
     rating: 5,
-    image: "/blue-bjj-gi.jpg",
+    image: "/Gi Brasileño Azul A3.jpg",
     category: "Uniformes",
   },
   {
     name: "Cinturón de Grado",
+<<<<<<< HEAD
     price: "$299.99",
+=======
+    price: "$100",
+>>>>>>> 2b6c7bef358b2aa092a72e85c5cdd488d325195a
     rating: 5,
-    image: "/bjj-belt.jpg",
+    image: "/bjj-belt-system.jpg",
     category: "Accesorios",
   },
   {
     name: "Rashguard de Compresión",
+<<<<<<< HEAD
     price: "$399.99",
+=======
+    price: "$300",
+>>>>>>> 2b6c7bef358b2aa092a72e85c5cdd488d325195a
     rating: 5,
-    image: "/bjj-rashguard.jpg",
+    image: "/Rashguard de Compresión.jpg",
     category: "Uniformes",
   },
   {
     name: "Shorts de Grappling",
-    price: "$39.99",
+    price: "$250",
     rating: 4,
-    image: "/grappling-shorts.jpg",
+    image: "/Shorts de Grappling.jpg",
     category: "Uniformes",
   },
   {
     name: "Protector de Orejas",
+<<<<<<< HEAD
     price: "$679.99",
+=======
+    price: "$80",
+>>>>>>> 2b6c7bef358b2aa092a72e85c5cdd488d325195a
     rating: 4,
-    image: "/ear-guards.jpg",
+    image: "/Protector de Orejas.jpg",
     category: "Protección",
   },
   {
     name: "Dummy de Entrenamiento",
     price: "$1904.99",
-    rating: 5,
-    image: "/grappling-dummy.jpg",
+    price: "$1,200",
+     rating: 5,
+    image: "/Dummy de Entrenamiento.jpg",
     category: "Equipamiento",
   },
 ]
