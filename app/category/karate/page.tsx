@@ -1,5 +1,8 @@
+"use client"
 import Link from "next/link"
 import { ArrowLeft, Star, ShoppingCart } from "lucide-react"
+import { useCartStore } from "@/store/cart"
+
 
 const products = [
   {
@@ -47,6 +50,7 @@ const products = [
 ]
 
 export default function KaratePage() {
+  const addToCart = useCartStore((state) => state.addToCart)
   return (
     <div className="min-h-screen bg-gradient-to-b from-zinc-50 via-white to-zinc-50">
       {/* Hero Section - Karate Style: Clean, Traditional, Disciplined */}
@@ -153,10 +157,13 @@ export default function KaratePage() {
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-3xl font-black text-red-600">{product.price}</span>
-                    <button className="flex items-center gap-2 px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-xl font-bold transition-colors">
-                      <ShoppingCart className="w-5 h-5" />
-                      Agregar
-                    </button>
+                    <button
+              onClick={() => addToCart(product)}
+              className="mt-4 flex items-center gap-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-xl transition"
+            >
+              <ShoppingCart className="w-4 h-4" />
+              Agregar al carrito
+            </button>
                   </div>
                 </div>
               </div>
